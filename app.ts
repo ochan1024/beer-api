@@ -26,7 +26,7 @@ app.post("/api/purchase", (req, res) => {
   }, 0);
   const totalCount = purchaseData.reduce((acc, cur) => acc + cur.count, 0);
 
-  const totalMoney = 35000;
+  const totalMoney = 3000000;
 
   if (totalPrice > totalMoney) {
     return res
@@ -58,7 +58,8 @@ enum TAG_KEY {
   국산맥주 = "국산맥주",
   수입맥주 = "수입맥주",
   OB맥주 = "OB맥주",
-  필스너 = "필스너"
+  필스너 = "필스너",
+  IPA = "IPA"
 }
 
 const tags: Tag[] = [
@@ -89,6 +90,10 @@ const tags: Tag[] = [
   {
     key: TAG_KEY.필스너,
     name: "필스너"
+  },
+  {
+    key: TAG_KEY.IPA,
+    name: "IPA"
   }
 ];
 
@@ -117,7 +122,7 @@ const beerData: Beer[] = [
     image: "http://photo.jtbc.joins.com/news/2013/09/24/20130924070203153.jpg",
     tags: getTagsByKeys([TAG_KEY.수입맥주, TAG_KEY.라거]),
     price: 4100,
-    stock: 1
+    stock: 0
   },
   {
     name: "St Louis Premium Framboise",
@@ -133,6 +138,52 @@ const beerData: Beer[] = [
     tags: getTagsByKeys([TAG_KEY.수입맥주, TAG_KEY.필스너]),
     price: 2500,
     stock: 10
+  },
+  {
+    name: "코로나",
+    image:
+      "https://anbl-2.azureedge.net/img/product/11432-B.jpg?fv=F9491D5439915FBA825B3AECDA06A93B-13484",
+    tags: getTagsByKeys([TAG_KEY.수입맥주, TAG_KEY.라거]),
+    price: 2590,
+    stock: 6
+  },
+  {
+    name: "하이네켄",
+    image: "http://cphoto.asiae.co.kr/listimglink/1/2014071015010460616_1.jpg",
+    tags: getTagsByKeys([TAG_KEY.수입맥주, TAG_KEY.라거]),
+    price: 3400,
+    stock: 1234
+  },
+  {
+    name: "국민 IPA",
+    image:
+      "http://img.marieclairekorea.com/2017/12/mck_5a28c532afcc9-562x562.jpg",
+    tags: getTagsByKeys([TAG_KEY.국산맥주, TAG_KEY.IPA]),
+    price: 5500,
+    stock: 3
+  },
+  {
+    name: "버드와이저",
+    image: "https://www.wishbeer.com/6852-large_default/budweiser-355-ml-5.jpg",
+    tags: getTagsByKeys([TAG_KEY.수입맥주, TAG_KEY.라거]),
+    price: 1300,
+    stock: 4
+  },
+  {
+    name: "Dry Finish D",
+    image:
+      "http://www.jcimportco.com/wp-content/uploads/2018/01/Hite-D-Dry-Finish.2.jpg",
+    tags: getTagsByKeys([TAG_KEY.국산맥주, TAG_KEY.라거]),
+    price: 1400,
+    stock: 0
+  },
+  {
+    name: "아사히",
+    image:
+      "https://img.tesco.com/Groceries/pi/272/8008440249272/IDShot_540x540.jpg",
+    tags: getTagsByKeys([TAG_KEY.수입맥주, TAG_KEY.라거]),
+    price: 2500,
+    stock: 90
   }
 ];
 const beers = beerData.map((beer, idx) => ({ ...beer, id: idx }));
