@@ -15,7 +15,6 @@ app.use(function(req, res, next) {
 app.get("/api/beers", (req, res) => res.json(beers));
 app.get("/api/tags", (req, res) => res.json(tags));
 app.post("/api/purchase", (req, res) => {
-  console.log(req.body);
   const purchaseData = req.body as { id: number; count: number }[];
   if (!purchaseData) {
     return res.sendStatus(400);
