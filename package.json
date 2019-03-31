@@ -1,0 +1,15 @@
+{
+  "name": "beer-api",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.12.1"
+  },
+  "scripts": {
+    "start": "tsc --lib es2017 app.ts && node app.js"
+  }
+}

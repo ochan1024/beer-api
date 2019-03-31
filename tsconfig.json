@@ -1,0 +1,5 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "es2017", "es2016.array.include"]
+  }
+}
